@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>D3 Career Profiles</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css" />
+</head>
+    <body>
+        <div th:replace="../fragments/header :: header"></div>
+
+        <div class="container">
+            <form th:action="@{/profile}" th:object="${battleTagInput}" method="post">
+                <input placeholder="Enter a Battletag" type="text" id="battleTagInput" name="battleTagInput" />
+                <button type="submit">Get D3 career profile</button>
+            </form>
+        </div>
+
+        <script src="/webjars/jquery/3.2.1/jquery.min.js"></script>
+        <script src="/webjars/bootstrap/3.3.7-1/js/bootstrap.min.js"></script>
+    </body>
+</html>

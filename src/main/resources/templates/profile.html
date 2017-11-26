@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="${battletag} + '\'s career profile'"></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css" />
+</head>
+<body>
+    <div th:replace="../fragments/header :: header"></div>
+
+    <div class="container">
+
+        <h1 th:text="${battletag}"></h1>
+
+        <p th:text="'Paragon level: ' + ${paragonLevel}"></p>
+        <p th:text="'Paragon level hardcore: ' + ${paragonLevelHardcore}"></p>
+        <p th:text="'Paragon level season: ' + ${paragonLevelSeason}"></p>
+        <p th:text="'Paragon level season hardcore: ' + ${paragonLevelSeasonHardcore}"></p>
+        <p th:if="${'' != guildName}" th:text="'Guild: ' + ${guildName}"></p>
+
+        <h1 th:text="Heroes"></h1>
+        <table class="table">
+                <tr>
+                    <th>Name</th>
+                    <th>Class</th>
+                    <th>Level</th>
+                </tr>
+                <tr th:each="hero : ${heroes}">
+                    <td th:text="${hero.name}"></td>
+                    <td th:text="${hero.heroClass}"></td>
+                    <td th:text="${hero.level}"></td>
+                </tr>
+        </table>
+    </div>
+
+    <script src="/webjars/jquery/3.2.1/jquery.min.js"></script>
+    <script src="/webjars/bootstrap/3.3.7-1/js/bootstrap.min.js"></script>
+</body>
+</html>
